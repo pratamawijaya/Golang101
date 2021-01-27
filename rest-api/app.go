@@ -21,7 +21,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	e.GET("/tasks", handlers.GetTasks(db))
-	e.POST("/tasks", handlers.PutTask(db))
+	e.POST("/task", handlers.PutTask(db))
 
 	e.Logger.Fatal(e.Start(":8989"))
 

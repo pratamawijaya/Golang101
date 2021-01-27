@@ -27,8 +27,10 @@ func PutTask(db *sql.DB) echo.HandlerFunc {
 
 		id, err := repository.PutTask(db, task.Name, task.Status)
 
-		if err != nil {
-			return c.JSON(http.StatusCreated, H{"created": id})
+		if err == nil {
+			return c.JSON(http.StatusCreated, H{
+				"created": id,
+			})
 		} else {
 			return err
 		}
