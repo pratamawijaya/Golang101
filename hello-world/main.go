@@ -29,4 +29,18 @@ func main()  {
 	fmt.Printf("bilangan positive %d\n", positiveNumber)
 	fmt.Printf("bilangan negative %d\n", negativeNumber)
 
+	// kondisional
+
+	var point = 4
+
+	if point == 10 {
+		fmt.Println("lulus dengan sempurna")
+	} else if point > 5 {
+		fmt.Println("lulus")
+	} else if point == 4 {
+		fmt.Println("hampir lulus")
+	} else {
+		fmt.Println("tidak lulus, nilai anda ", point)
+	}
+
 }
