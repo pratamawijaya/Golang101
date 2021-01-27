@@ -2,6 +2,7 @@ package main
 
 // import fmt https://golang.org/pkg/fmt/
 import "fmt"
+import "math"
 
 func main()  {
 	var firstName string = "Pratama"
@@ -15,10 +16,15 @@ func main()  {
 
 	fmt.Println("Hello", firstName, lastName + " !", hoby)
 
+	// konstanta
+	const phi = math.Pi
+
+	fmt.Printf("bilangan konstant phi %f\n", phi)
 
 	// type data
 	var positiveNumber uint8 = 99
 	var negativeNumber = -1234
+
 
 	fmt.Printf("bilangan positive %d\n", positiveNumber)
 	fmt.Printf("bilangan negative %d\n", negativeNumber)
