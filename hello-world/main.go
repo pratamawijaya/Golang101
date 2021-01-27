@@ -15,4 +15,12 @@ func main()  {
 
 	fmt.Println("Hello", firstName, lastName + " !", hoby)
 
+
+	// type data
+	var positiveNumber uint8 = 99
+	var negativeNumber = -1234
+
+	fmt.Printf("bilangan positive %d\n", positiveNumber)
+	fmt.Printf("bilangan negative %d\n", negativeNumber)
+
 }
