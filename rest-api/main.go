@@ -15,6 +15,7 @@ func main() {
 
 	// init db
 	db := initDB("tasks.db")
+	migrate(db)
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
