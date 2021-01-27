@@ -1,10 +1,12 @@
 package main
 
 // import fmt https://golang.org/pkg/fmt/
-import "fmt"
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
-func main()  {
+func main() {
 	var firstName string = "Pratama"
 	var lastName string
 	// penulisan variable dengan type inference
@@ -14,7 +16,7 @@ func main()  {
 
 	fmt.Printf("Hello World %s %s %s \n", firstName, lastName, hoby)
 
-	fmt.Println("Hello", firstName, lastName + " !", hoby)
+	fmt.Println("Hello", firstName, lastName+" !", hoby)
 
 	// konstanta
 	const phi = math.Pi
@@ -24,7 +26,6 @@ func main()  {
 	// type data
 	var positiveNumber uint8 = 99
 	var negativeNumber = -1234
-
 
 	fmt.Printf("bilangan positive %d\n", positiveNumber)
 	fmt.Printf("bilangan negative %d\n", negativeNumber)
@@ -46,11 +47,11 @@ func main()  {
 	var nilai = 8840.0
 
 	if percent := nilai / 100; percent >= 100 {
-    		fmt.Printf("%.1f%s perfect!\n", percent, "%")
+		fmt.Printf("%.1f%s perfect!\n", percent, "%")
 	} else if percent >= 70 {
 		fmt.Printf("%.1f%s good\n", percent, "%")
 	} else {
-    		fmt.Printf("%.1f%s not bad\n", percent, "%")
+		fmt.Printf("%.1f%s not bad\n", percent, "%")
 	}
 
 	var check = 6
@@ -64,5 +65,24 @@ func main()  {
 		fmt.Println("not bad")
 	}
 
+	var months = [...]string{
+		"Januari",
+		"Februari",
+		"Maret",
+		"April",
+		"Mei",
+		"Juni",
+		"Juli",
+		"Agustus",
+		"September",
+		"Oktober",
+		"November",
+		"Desember",
+	}
+
+	var slice1 = months[2:4]
+
+	fmt.Println("panjang ", len(slice1))
+	fmt.Println("capacity ", cap(slice1))
 
 }
