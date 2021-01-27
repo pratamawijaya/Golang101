@@ -9,6 +9,8 @@ func main()  {
 
 	lastName = "Wijaya"
 
-	fmt.Printf("Hello World %s %s", firstName, lastName)
+	fmt.Printf("Hello World %s %s \n", firstName, lastName)
+
+	fmt.Println("Hello", firstName, lastName + " !")
 
 }
