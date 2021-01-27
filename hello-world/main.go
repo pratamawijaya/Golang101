@@ -6,11 +6,13 @@ import "fmt"
 func main()  {
 	var firstName string = "Pratama"
 	var lastName string
+	// penulisan variable dengan type inference
+	hoby := "Sepeda"
 
 	lastName = "Wijaya"
 
-	fmt.Printf("Hello World %s %s \n", firstName, lastName)
+	fmt.Printf("Hello World %s %s %s \n", firstName, lastName, hoby)
 
-	fmt.Println("Hello", firstName, lastName + " !")
+	fmt.Println("Hello", firstName, lastName + " !", hoby)
 
 }
