@@ -53,4 +53,16 @@ func main()  {
     		fmt.Printf("%.1f%s not bad\n", percent, "%")
 	}
 
+	var check = 6
+
+	switch check {
+	case 8:
+		fmt.Println("perfect")
+	case 7:
+		fmt.Println("awesome")
+	default:
+		fmt.Println("not bad")
+	}
+
+
 }
