@@ -18,6 +18,9 @@ func main() {
 	var number10 int = -128 // sama dengan int32 atau int64 (tergantung nilai)
 	var number11 rune = -2147483648 // sama dengan int32
 
+	var decimalNumber = 2.62
+	var exist bool = true
+
 
 	fmt.Printf("bilangan : %d", number)
 	fmt.Printf("bilangan : %d", number1)
@@ -31,7 +34,14 @@ func main() {
 	fmt.Printf("bilangan : %d", number9)
 	fmt.Printf("bilangan : %d", number10)
 	fmt.Printf("bilangan : %d", number11)
+	fmt.Printf("bilang decimal : %f", decimalNumber)
 	
+	if(exist){
+		fmt.Printf("exist bool true")
+	}else {
+		fmt.Printf("bool false")
+	}
+		
 
 
 }
