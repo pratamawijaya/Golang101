@@ -54,12 +54,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/components/schemas/createOrUpdateCategory"
               }
             }
           }
@@ -130,11 +125,149 @@
             }
           }
         }
+      },
+      "put": {
+        "security": [
+          {
+            "CategoryAuth": []
+          }
+        ],
+        "tags": [
+          "Category API"
+        ],
+        "description": "Update Category by id",
+        "summary": "Update Category by categoryId",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "Category ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createOrUpdateCategory"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success update category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/category"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "security": [
+          {
+            "CategoryAuth": []
+          }
+        ],
+        "tags": [
+          "Category API"
+        ],
+        "description": "Delete category by ID",
+        "summary": "Delete Category by categoryId",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "Category ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success Delete category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/generalError"
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
   "components": {
+    "securitySchemes": {
+      "CategoryAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Bearer token",
+        "description": "Authentication for category api"
+      }
+    },
     "schemas": {
+      "generalError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "createOrUpdateCategory": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
       "category": {
         "type": "object",
         "properties": {
