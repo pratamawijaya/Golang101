@@ -1,6 +1,7 @@
 package repository
 
 import (
+	"restapi/helper"
 	"restapi/model/domain"
 	"database/sql"
 	"context"
@@ -14,14 +15,11 @@ func (repository *CategoryRepositoryImpl) Save(ctx context.Context, tx *sql.Tx, 
 	SQL := "INSERT INTO category (name) VALUES (?)"
 	result, err := tx.ExecContext(ctx, SQL, category.Name)
 	
-	if err != nil {
-		panic(err)
-	}
-
+	helper.PanicIfError(err)
+	
 	id, err := result.LastInsertId()
-	if err != nil {
-		panic(err)
-	}
+	
+	helper.PanicIfError(err)
 
 	category.Id = id
 
