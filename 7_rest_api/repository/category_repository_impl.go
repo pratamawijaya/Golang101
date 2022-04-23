@@ -34,3 +34,11 @@ func (repository *CategoryRepositoryImpl) Update(ctx context.Context, tx *sql.Tx
 
 	return category
 }
+
+func (repository *CategoryRepositoryImpl) Delete(ctx context.Context, tx *sql.Tx, category domain.Category) {
+	SQL := "DELETE FROM category WHERE id = ?"
+	_, err := tx.ExecContext(ctx, SQL, category.Id)
+	
+	helper.PanicIfError(err)
+
+}
