@@ -21,7 +21,7 @@ func (repository *CategoryRepositoryImpl) Save(ctx context.Context, tx *sql.Tx, 
 
 	helper.PanicIfError(err)
 
-	category.Id = id
+	category.Id = int(id)
 
 	return category
 }
